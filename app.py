@@ -1,140 +1,37 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="Ian Chen - Engineer, Educator, Entrepreneur",
-    page_icon="👨🏻‍💻",
-    layout="centered",  # centered or wide
-    initial_sidebar_state="auto",
-)
+# Set page config to add a title and favicon
+st.set_page_config(page_title="YH's Portfolio", page_icon=":smiley:")
 
-col1, col2 = st.columns([0.3, 0.7])
+# Use columns to layout the intro section
+col1, col2 = st.columns(2)
 with col1:
-    st.markdown(
-        """
-    <style>
-    .profile-img img {
-        width: 100%;
-        border-radius: 50%;
-    }
-    </style>
+    st.header("Hello, I'm YH!")
+    st.write("510 Example")
 
-    <div class="profile-img">
+# Projects Section
+st.write("---")
+st.subheader("Project")
+with st.expander("510's lab"):
+    st.write("""
+        **Project Name**: 510_lab1
+        **Description**: Example 
+        **Technologies Used**: Python, Streamlit
+        **GitHub Link**: [Visit GitHub](https://github.com/Yuanhl4/510_lab1)  
+    """)
 
-    ![](https://avatars.githubusercontent.com/u/7678108?v=4)
-    </div>
-    """,
-        unsafe_allow_html=True,
-    )
-    # st.image('https://avatars.githubusercontent.com/u/7678108?v=4')
-with col2:
-    st.markdown(
-        """
-    # Ian Chen (He/Him)
-                
-    - Instructor at [Lighthouse Labs](https://www.lighthouselabs.ca/)
-    - Engineer at [Clio](https://www.clio.com/)
-    """
-    )
-
-st.markdown(
-    """
-# Projects
-
-- [Project 1](https://www.google.com)
-- [Project 2](https://www.google.com)
-- [Project 3](https://www.google.com)
+# Contact Section
+st.write("---")
+st.subheader("Contact Me")
+contact_form = """
+<form action="https://formsubmit.co/your_email_here" method="POST">
+    <input type='text' name='name' placeholder='Your name' required>
+    <input type='email' name='email' placeholder='Your email' required>
+    <button type='submit'>Send</button>
+</form>
 """
-)
+st.markdown(contact_form, unsafe_allow_html=True)
 
-st.markdown(
-    """
-# Contact
-""")
-col1, col2, col3 = st.columns(3)
-
-# Card with image and text
-for col in [col1, col2, col3]:
-    col.markdown(
-        """
-        <style>
-        .profile-img img {
-            width: 100%;
-            border-radius: 10%;
-        }
-        </style>
-
-        <div class="profile-img">
-
-        ![](https://avatars.githubusercontent.com/u/7678108?v=4)
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-col1, col2, col3 = st.columns(3)
-
-# Card with image and text
-for col in [col1, col2, col3]:
-    col.markdown(
-        """
-        <style>
-        .profile-img img {
-            width: 100%;
-            border-radius: 10%;
-        }
-        </style>
-
-        <div class="profile-img">
-
-        ![](https://avatars.githubusercontent.com/u/7678108?v=4)
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-ft = """
-<style>
-a:link , a:visited{
-color: #BFBFBF;  /* theme's text color hex code at 75 percent brightness*/
-background-color: transparent;
-text-decoration: none;
-}
-
-a:hover,  a:active {
-color: #0283C3; /* theme's primary color*/
-background-color: transparent;
-text-decoration: underline;
-}
-
-#page-container {
-  position: relative;
-  min-height: 10vh;
-}
-
-footer{
-    visibility:hidden;
-}
-
-.footer {
-position: relative;
-left: 0;
-top:230px;
-bottom: 0;
-width: 100%;
-background-color: transparent;
-color: #808080; /* theme's text color hex code at 50 percent brightness*/
-text-align: left; /* you can replace 'left' with 'center' or 'right' if you want*/
-}
-</style>
-
-<div id="page-container">
-
-<div class="footer">
-<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://streamlit.io/" target="_blank">Streamlit</a><br 'style= top:3px;'>
-with <img src="https://em-content.zobj.net/source/skype/289/red-heart_2764-fe0f.png" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/sape94" target="_blank"> by sape94</a></p>
-</div>
-
-</div>
-"""
-st.write(ft, unsafe_allow_html=True)
+# Footer
+st.write("---")
+st.write("© 2024 Ian Chen - All Rights Reserved")
