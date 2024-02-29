@@ -34,4 +34,3 @@ st.markdown(contact_form, unsafe_allow_html=True)
 
 # Footer
 st.write("---")
-st.write("© 2024 Ian Chen - All Rights Reserved")
